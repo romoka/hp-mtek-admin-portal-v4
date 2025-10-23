@@ -1,126 +1,347 @@
+@import "tailwindcss";
+
+/* Your original CSS variables for easy theming */
+:root {
+  --color-primary: #36c2d7;
+  --color-primary-50: color-mix(in srgb, var(--color-primary), #fff 90%);
+  --color-primary-100: color-mix(in srgb, var(--color-primary), #fff 80%);
+  --color-primary-200: color-mix(in srgb, var(--color-primary), #fff 60%);
+  --color-primary-300: color-mix(in srgb, var(--color-primary), #fff 40%);
+  --color-primary-400: color-mix(in srgb, var(--color-primary), #fff 20%);
+  --color-primary-500: color-mix(in srgb, var(--color-primary), #fff 0%);
+  --color-primary-600: color-mix(in srgb, var(--color-primary), #000 20%);
+  --color-primary-700: color-mix(in srgb, var(--color-primary), #000 40%);
+  --color-primary-800: color-mix(in srgb, var(--color-primary), #000 60%);
+  --color-primary-900: color-mix(in srgb, var(--color-primary), #000 80%);
+  --color-primary-950: color-mix(in srgb, var(--color-primary), #000 90%);
+
+  --color-secondary: #167f9f;
+  --color-secondary-50: color-mix(in srgb, var(--color-secondary), #fff 90%);
+  --color-secondary-100: color-mix(in srgb, var(--color-secondary), #fff 80%);
+  --color-secondary-200: color-mix(in srgb, var(--color-secondary), #fff 60%);
+  --color-secondary-300: color-mix(in srgb, var(--color-secondary), #fff 40%);
+  --color-secondary-400: color-mix(in srgb, var(--color-secondary), #fff 20%);
+  --color-secondary-500: color-mix(in srgb, var(--color-secondary), #fff 0%);
+  --color-secondary-600: color-mix(in srgb, var(--color-secondary), #000 20%);
+  --color-secondary-700: color-mix(in srgb, var(--color-secondary), #000 40%);
+  --color-secondary-800: color-mix(in srgb, var(--color-secondary), #000 60%);
+  --color-secondary-900: color-mix(in srgb, var(--color-secondary), #000 80%);
+  --color-secondary-950: color-mix(in srgb, var(--color-secondary), #000 90%);
+
+  --color-info: #0ea5e9;
+  --color-info-50: color-mix(in srgb, var(--color-info), #fff 90%);
+  --color-info-100: color-mix(in srgb, var(--color-info), #fff 80%);
+  --color-info-200: color-mix(in srgb, var(--color-info), #fff 60%);
+  --color-info-300: color-mix(in srgb, var(--color-info), #fff 40%);
+  --color-info-400: color-mix(in srgb, var(--color-info), #fff 20%);
+  --color-info-500: color-mix(in srgb, var(--color-info), #fff 0%);
+  --color-info-600: color-mix(in srgb, var(--color-info), #000 20%);
+  --color-info-700: color-mix(in srgb, var(--color-info), #000 40%);
+  --color-info-800: color-mix(in srgb, var(--color-info), #000 60%);
+  --color-info-900: color-mix(in srgb, var(--color-info), #000 80%);
+  --color-info-950: color-mix(in srgb, var(--color-info), #000 90%);
+
+  --color-success: #22c55e;
+  --color-success-50: color-mix(in srgb, var(--color-success), #fff 90%);
+  --color-success-100: color-mix(in srgb, var(--color-success), #fff 80%);
+  --color-success-200: color-mix(in srgb, var(--color-success), #fff 60%);
+  --color-success-300: color-mix(in srgb, var(--color-success), #fff 40%);
+  --color-success-400: color-mix(in srgb, var(--color-success), #fff 20%);
+  --color-success-500: color-mix(in srgb, var(--color-success), #fff 0%);
+  --color-success-600: color-mix(in srgb, var(--color-success), #000 20%);
+  --color-success-700: color-mix(in srgb, var(--color-success), #000 40%);
+  --color-success-800: color-mix(in srgb, var(--color-success), #000 60%);
+  --color-success-900: color-mix(in srgb, var(--color-success), #000 80%);
+  --color-success-950: color-mix(in srgb, var(--color-success), #000 90%);
+
+  --color-warning: #eab308;
+  --color-warning-50: color-mix(in srgb, var(--color-warning), #fff 90%);
+  --color-warning-100: color-mix(in srgb, var(--color-warning), #fff 80%);
+  --color-warning-200: color-mix(in srgb, var(--color-warning), #fff 60%);
+  --color-warning-300: color-mix(in srgb, var(--color-warning), #fff 40%);
+  --color-warning-400: color-mix(in srgb, var(--color-warning), #fff 20%);
+  --color-warning-500: color-mix(in srgb, var(--color-warning), #fff 0%);
+  --color-warning-600: color-mix(in srgb, var(--color-warning), #000 20%);
+  --color-warning-700: color-mix(in srgb, var(--color-warning), #000 40%);
+  --color-warning-800: color-mix(in srgb, var(--color-warning), #000 60%);
+  --color-warning-900: color-mix(in srgb, var(--color-warning), #000 80%);
+  --color-warning-950: color-mix(in srgb, var(--color-warning), #000 90%);
+
+  --color-danger: #ef4444;
+  --color-danger-50: color-mix(in srgb, var(--color-danger), #fff 90%);
+  --color-danger-100: color-mix(in srgb, var(--color-danger), #fff 80%);
+  --color-danger-200: color-mix(in srgb, var(--color-danger), #fff 60%);
+  --color-danger-300: color-mix(in srgb, var(--color-danger), #fff 40%);
+  --color-danger-400: color-mix(in srgb, var(--color-danger), #fff 20%);
+  --color-danger-500: color-mix(in srgb, var(--color-danger), #fff 0%);
+  --color-danger-600: color-mix(in srgb, var(--color-danger), #000 20%);
+  --color-danger-700: color-mix(in srgb, var(--color-danger), #000 40%);
+  --color-danger-800: color-mix(in srgb, var(--color-danger), #000 60%);
+  --color-danger-900: color-mix(in srgb, var(--color-danger), #000 80%);
+  --color-danger-950: color-mix(in srgb, var(--color-danger), #000 90%);
+
+  --color-gray: #9099c4;
+  --color-gray-50: color-mix(in srgb, var(--color-gray), #fff 90%);
+  --color-gray-100: color-mix(in srgb, var(--color-gray), #fff 80%);
+  --color-gray-200: color-mix(in srgb, var(--color-gray), #fff 60%);
+  --color-gray-300: color-mix(in srgb, var(--color-gray), #fff 40%);
+  --color-gray-400: color-mix(in srgb, var(--color-gray), #fff 20%);
+  --color-gray-500: color-mix(in srgb, var(--color-gray), #fff 0%);
+  --color-gray-600: color-mix(in srgb, var(--color-gray), #000 20%);
+  --color-gray-700: color-mix(in srgb, var(--color-gray), #000 40%);
+  --color-gray-800: color-mix(in srgb, var(--color-gray), #000 60%);
+  --color-gray-900: color-mix(in srgb, var(--color-gray), #000 80%);
+  --color-gray-950: color-mix(in srgb, var(--color-gray), #000 90%);
+
+  --color-royal: #4b71e6;
+  --color-royal-50: color-mix(in srgb, var(--color-royal), #fff 90%);
+  --color-royal-100: color-mix(in srgb, var(--color-royal), #fff 80%);
+  --color-royal-200: color-mix(in srgb, var(--color-royal), #fff 60%);
+  --color-royal-300: color-mix(in srgb, var(--color-royal), #fff 40%);
+  --color-royal-400: color-mix(in srgb, var(--color-royal), #fff 20%);
+  --color-royal-500: color-mix(in srgb, var(--color-royal), #fff 0%);
+  --color-royal-600: color-mix(in srgb, var(--color-royal), #000 20%);
+  --color-royal-700: color-mix(in srgb, var(--color-royal), #000 40%);
+  --color-royal-800: color-mix(in srgb, var(--color-royal), #000 60%);
+  --color-royal-900: color-mix(in srgb, var(--color-royal), #000 80%);
+  --color-royal-950: color-mix(in srgb, var(--color-royal), #000 90%);
+}
+
+/* Dark mode example - override variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* You can adjust colors for dark mode here */
+    /* --color-primary: #4dd0e1; */
+  }
+}
+
+/* Or use class-based dark mode */
+.dark {
+  /* --color-primary: #4dd0e1; */
+}
+
+/* Register custom properties with Tailwind v4 */
+@theme {
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-950: var(--color-secondary-950);
+
+  --color-info-50: var(--color-info-50);
+  --color-info-100: var(--color-info-100);
+  --color-info-200: var(--color-info-200);
+  --color-info-300: var(--color-info-300);
+  --color-info-400: var(--color-info-400);
+  --color-info-500: var(--color-info-500);
+  --color-info-600: var(--color-info-600);
+  --color-info-700: var(--color-info-700);
+  --color-info-800: var(--color-info-800);
+  --color-info-900: var(--color-info-900);
+  --color-info-950: var(--color-info-950);
+
+  --color-success-50: var(--color-success-50);
+  --color-success-100: var(--color-success-100);
+  --color-success-200: var(--color-success-200);
+  --color-success-300: var(--color-success-300);
+  --color-success-400: var(--color-success-400);
+  --color-success-500: var(--color-success-500);
+  --color-success-600: var(--color-success-600);
+  --color-success-700: var(--color-success-700);
+  --color-success-800: var(--color-success-800);
+  --color-success-900: var(--color-success-900);
+  --color-success-950: var(--color-success-950);
+
+  --color-warning-50: var(--color-warning-50);
+  --color-warning-100: var(--color-warning-100);
+  --color-warning-200: var(--color-warning-200);
+  --color-warning-300: var(--color-warning-300);
+  --color-warning-400: var(--color-warning-400);
+  --color-warning-500: var(--color-warning-500);
+  --color-warning-600: var(--color-warning-600);
+  --color-warning-700: var(--color-warning-700);
+  --color-warning-800: var(--color-warning-800);
+  --color-warning-900: var(--color-warning-900);
+  --color-warning-950: var(--color-warning-950);
+
+  --color-danger-50: var(--color-danger-50);
+  --color-danger-100: var(--color-danger-100);
+  --color-danger-200: var(--color-danger-200);
+  --color-danger-300: var(--color-danger-300);
+  --color-danger-400: var(--color-danger-400);
+  --color-danger-500: var(--color-danger-500);
+  --color-danger-600: var(--color-danger-600);
+  --color-danger-700: var(--color-danger-700);
+  --color-danger-800: var(--color-danger-800);
+  --color-danger-900: var(--color-danger-900);
+  --color-danger-950: var(--color-danger-950);
+
+  --color-gray-50: var(--color-gray-50);
+  --color-gray-100: var(--color-gray-100);
+  --color-gray-200: var(--color-gray-200);
+  --color-gray-300: var(--color-gray-300);
+  --color-gray-400: var(--color-gray-400);
+  --color-gray-500: var(--color-gray-500);
+  --color-gray-600: var(--color-gray-600);
+  --color-gray-700: var(--color-gray-700);
+  --color-gray-800: var(--color-gray-800);
+  --color-gray-900: var(--color-gray-900);
+  --color-gray-950: var(--color-gray-950);
+
+  --color-royal-50: var(--color-royal-50);
+  --color-royal-100: var(--color-royal-100);
+  --color-royal-200: var(--color-royal-200);
+  --color-royal-300: var(--color-royal-300);
+  --color-royal-400: var(--color-royal-400);
+  --color-royal-500: var(--color-royal-500);
+  --color-royal-600: var(--color-royal-600);
+  --color-royal-700: var(--color-royal-700);
+  --color-royal-800: var(--color-royal-800);
+  --color-royal-900: var(--color-royal-900);
+  --color-royal-950: var(--color-royal-950);
+}
+
 /* Gilroy font faces */
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-Black.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-BlackItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-BlackItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-Bold.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-BoldItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-ExtraBold.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-ExtraBoldItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 800;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-Heavy.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Heavy.ttf") format("truetype");
   font-weight: 950;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-HeavyItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-HeavyItalic.ttf") format("truetype");
   font-weight: 950;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-Light.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-LightItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-Medium.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-MediumItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-Regular.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-RegularItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-RegularItalic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-SemiBold.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-SemiBoldItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-SemiBoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-Thin.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-ThinItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-ThinItalic.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-UltraLight.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-UltraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gilroy';
-  src: url('/fonts/gilroy/Gilroy-UltraLightItalic.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-UltraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
 }
 
 html,
 body {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
 }
