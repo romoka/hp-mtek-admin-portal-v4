@@ -24,6 +24,13 @@ export class App implements OnInit {
       'href',
       `${this.getThemeCssLink()}?tenantHost=${currentHost}`
     );
+    linkElement.onload = () => {
+      this.renderer.setStyle(
+        document.querySelector('app-root'),
+        'display',
+        'block'
+      );
+    };
     console.log(document.getElementById('themecss')?.getAttribute('href'));
   }
 
