@@ -1,6 +1,8 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { environment } from '../environments/environment';
+import { AppService } from './services/app-service';
+import { AppEnums } from './enums/app.enums';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +11,17 @@ import { environment } from '../environments/environment';
   styleUrl: './app.css',
 })
 export class App implements OnInit {
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private appSvc: AppService) {}
   ngOnInit(): void {
     let currentHost = window.location.hostname;
     if (currentHost === 'localhost' || currentHost === '') {
       currentHost = environment.DEFAULT_ADMIN_HOST_URL;
     }
 
-    console.log(`Current Host is ${currentHost}: Loading the theme css...`);
+    //Get the partner details from the URL
+    const partnerDetailsUrl = `${environment.CORE_API_URL}/mtektpinfo?tenantHost=${currentHost}`;
+    this.getPartnerDetails(partnerDetailsUrl);
+
     const linkElement = this.renderer.selectRootElement('#themecss', true);
     // update the href attribute
     this.renderer.setAttribute(
@@ -31,7 +36,15 @@ export class App implements OnInit {
         'block'
       );
     };
-    console.log(document.getElementById('themecss')?.getAttribute('href'));
+  }
+  getPartnerDetails(partnerDetailsUrl: string) {
+    this.appSvc.makeGetRequest(partnerDetailsUrl).subscribe((response) => {
+      if (response.Status === 200) {
+        this.appSvc.setSessionData(AppEnums.APP_SESSION, {
+          thirdParty: response.Payload,
+        });
+      }
+    });
   }
 
   getThemeCssLink() {
