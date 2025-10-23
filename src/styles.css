@@ -1,119 +1,28 @@
-
 :root {
-  --color-primary: #36c2d7;
-  --color-primary-50: color-mix(in srgb, var(--color-primary), #fff 90%);
-  --color-primary-100: color-mix(in srgb, var(--color-primary), #fff 80%);
-  --color-primary-200: color-mix(in srgb, var(--color-primary), #fff 60%);
-  --color-primary-300: color-mix(in srgb, var(--color-primary), #fff 40%);
-  --color-primary-400: color-mix(in srgb, var(--color-primary), #fff 20%);
-  --color-primary-500: color-mix(in srgb, var(--color-primary), #fff 0%);
-  --color-primary-600: color-mix(in srgb, var(--color-primary), #000 20%);
-  --color-primary-700: color-mix(in srgb, var(--color-primary), #000 40%);
-  --color-primary-800: color-mix(in srgb, var(--color-primary), #000 60%);
-  --color-primary-900: color-mix(in srgb, var(--color-primary), #000 80%);
-  --color-primary-950: color-mix(in srgb, var(--color-primary), #000 90%);
-  --color-on-primary: #000;
+  --color-primary: 54 194 215;
+  --color-on-primary: 0 0 0;
 
-  --color-secondary: #167f9f;
-  --color-secondary-50: color-mix(in srgb, var(--color-secondary), #fff 90%);
-  --color-secondary-100: color-mix(in srgb, var(--color-secondary), #fff 80%);
-  --color-secondary-200: color-mix(in srgb, var(--color-secondary), #fff 60%);
-  --color-secondary-300: color-mix(in srgb, var(--color-secondary), #fff 40%);
-  --color-secondary-400: color-mix(in srgb, var(--color-secondary), #fff 20%);
-  --color-secondary-500: color-mix(in srgb, var(--color-secondary), #fff 0%);
-  --color-secondary-600: color-mix(in srgb, var(--color-secondary), #000 20%);
-  --color-secondary-700: color-mix(in srgb, var(--color-secondary), #000 40%);
-  --color-secondary-800: color-mix(in srgb, var(--color-secondary), #000 60%);
-  --color-secondary-900: color-mix(in srgb, var(--color-secondary), #000 80%);
-  --color-secondary-950: color-mix(in srgb, var(--color-secondary), #000 90%);
-  --color-on-secondary: #fff;
+  --color-secondary: 22 127 159;
+  --color-on-secondary: 255 255 255;
 
-  --color-info: #0ea5e9;
-  --color-info-50: color-mix(in srgb, var(--color-info), #fff 90%);
-  --color-info-100: color-mix(in srgb, var(--color-info), #fff 80%);
-  --color-info-200: color-mix(in srgb, var(--color-info), #fff 60%);
-  --color-info-300: color-mix(in srgb, var(--color-info), #fff 40%);
-  --color-info-400: color-mix(in srgb, var(--color-info), #fff 20%);
-  --color-info-500: color-mix(in srgb, var(--color-info), #fff 0%);
-  --color-info-600: color-mix(in srgb, var(--color-info), #000 20%);
-  --color-info-700: color-mix(in srgb, var(--color-info), #000 40%);
-  --color-info-800: color-mix(in srgb, var(--color-info), #000 60%);
-  --color-info-900: color-mix(in srgb, var(--color-info), #000 80%);
-  --color-info-950: color-mix(in srgb, var(--color-info), #000 90%);
-  --color-on-info: #000;
+  --color-info: 14 165 233;
+  --color-on-info: 0 0 0;
 
-  --color-success: #22c55e;
-  --color-success-50: color-mix(in srgb, var(--color-success), #fff 90%);
-  --color-success-100: color-mix(in srgb, var(--color-success), #fff 80%);
-  --color-success-200: color-mix(in srgb, var(--color-success), #fff 60%);
-  --color-success-300: color-mix(in srgb, var(--color-success), #fff 40%);
-  --color-success-400: color-mix(in srgb, var(--color-success), #fff 20%);
-  --color-success-500: color-mix(in srgb, var(--color-success), #fff 0%);
-  --color-success-600: color-mix(in srgb, var(--color-success), #000 20%);
-  --color-success-700: color-mix(in srgb, var(--color-success), #000 40%);
-  --color-success-800: color-mix(in srgb, var(--color-success), #000 60%);
-  --color-success-900: color-mix(in srgb, var(--color-success), #000 80%);
-  --color-success-950: color-mix(in srgb, var(--color-success), #000 90%);
-  --color-on-success: #000;
+  --color-success: 34 197 94;
+  --color-on-success: 0 0 0;
 
-  --color-warning: #eab308;
-  --color-warning-50: color-mix(in srgb, var(--color-warning), #fff 90%);
-  --color-warning-100: color-mix(in srgb, var(--color-warning), #fff 80%);
-  --color-warning-200: color-mix(in srgb, var(--color-warning), #fff 60%);
-  --color-warning-300: color-mix(in srgb, var(--color-warning), #fff 40%);
-  --color-warning-400: color-mix(in srgb, var(--color-warning), #fff 20%);
-  --color-warning-500: color-mix(in srgb, var(--color-warning), #fff 0%);
-  --color-warning-600: color-mix(in srgb, var(--color-warning), #000 20%);
-  --color-warning-700: color-mix(in srgb, var(--color-warning), #000 40%);
-  --color-warning-800: color-mix(in srgb, var(--color-warning), #000 60%);
-  --color-warning-900: color-mix(in srgb, var(--color-warning), #000 80%);
-  --color-warning-950: color-mix(in srgb, var(--color-warning), #000 90%);
-  --color-on-warning: #000;
+  --color-warning: 234 179 8;
+  --color-on-warning: 0 0 0;
 
-  --color-danger: #ef4444;
-  --color-danger-50: color-mix(in srgb, var(--color-danger), #fff 90%);
-  --color-danger-100: color-mix(in srgb, var(--color-danger), #fff 80%);
-  --color-danger-200: color-mix(in srgb, var(--color-danger), #fff 60%);
-  --color-danger-300: color-mix(in srgb, var(--color-danger), #fff 40%);
-  --color-danger-400: color-mix(in srgb, var(--color-danger), #fff 20%);
-  --color-danger-500: color-mix(in srgb, var(--color-danger), #fff 0%);
-  --color-danger-600: color-mix(in srgb, var(--color-danger), #000 20%);
-  --color-danger-700: color-mix(in srgb, var(--color-danger), #000 40%);
-  --color-danger-800: color-mix(in srgb, var(--color-danger), #000 60%);
-  --color-danger-900: color-mix(in srgb, var(--color-danger), #000 80%);
-  --color-danger-950: color-mix(in srgb, var(--color-danger), #000 90%);
-  --color-on-danger: #000;
+  --color-danger: 239 68 68;
+  --color-on-danger: 0 0 0;
 
-  --color-gray: #9099c4;
-  --color-gray-50: color-mix(in srgb, var(--color-gray), #fff 90%);
-  --color-gray-100: color-mix(in srgb, var(--color-gray), #fff 80%);
-  --color-gray-200: color-mix(in srgb, var(--color-gray), #fff 60%);
-  --color-gray-300: color-mix(in srgb, var(--color-gray), #fff 40%);
-  --color-gray-400: color-mix(in srgb, var(--color-gray), #fff 20%);
-  --color-gray-500: color-mix(in srgb, var(--color-gray), #fff 0%);
-  --color-gray-600: color-mix(in srgb, var(--color-gray), #000 20%);
-  --color-gray-700: color-mix(in srgb, var(--color-gray), #000 40%);
-  --color-gray-800: color-mix(in srgb, var(--color-gray), #000 60%);
-  --color-gray-900: color-mix(in srgb, var(--color-gray), #000 80%);
-  --color-gray-950: color-mix(in srgb, var(--color-gray), #000 90%);
-  --color-on-gray: #000;
+  --color-gray: 144 153 196;
+  --color-on-gray: 0 0 0;
 
-  --color-royal: #4b71e6;
-  --color-royal-50: color-mix(in srgb, var(--color-royal), #fff 90%);
-  --color-royal-100: color-mix(in srgb, var(--color-royal), #fff 80%);
-  --color-royal-200: color-mix(in srgb, var(--color-royal), #fff 60%);
-  --color-royal-300: color-mix(in srgb, var(--color-royal), #fff 40%);
-  --color-royal-400: color-mix(in srgb, var(--color-royal), #fff 20%);
-  --color-royal-500: color-mix(in srgb, var(--color-royal), #fff 0%);
-  --color-royal-600: color-mix(in srgb, var(--color-royal), #000 20%);
-  --color-royal-700: color-mix(in srgb, var(--color-royal), #000 40%);
-  --color-royal-800: color-mix(in srgb, var(--color-royal), #000 60%);
-  --color-royal-900: color-mix(in srgb, var(--color-royal), #000 80%);
-  --color-royal-950: color-mix(in srgb, var(--color-royal), #000 90%);
-  --color-on-royal: #000;
+  --color-royal: 75 113 230;
+  --color-on-royal: 0 0 0;
 }
-
-
 
 /* Gilroy font faces */
 @font-face {
@@ -244,5 +153,3 @@
 html, body {
   font-family: 'Gilroy', Arial, Helvetica, sans-serif;
 }
-
-
